@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MAPEH IV Quarter 4 Interactive Game</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f8ff; }
+.center-screen {
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  height:100vh; text-align:center;
+}
+h1 { font-size:50px; color:#1e90ff; margin-bottom:30px; }
+button.play-now {
+  background-color:#1e90ff; color:white; font-size:28px; padding:18px 50px;
+  border:none; border-radius:10px; cursor:pointer;
+}
+button { margin:5px 5px 15px 0; padding:12px 25px; font-size:20px; cursor:pointer; }
+.week-content { padding:20px; max-width:900px; margin:auto; }
+h2 { color:#1e90ff; font-size:28px; margin-top:40px; }
+h3 { font-size:22px; }
+p.story { text-align:justify; font-size:20px; line-height:1.6; background-color:#e6f2ff; padding:15px; border-radius:8px; }
+.feedback { font-weight:bold; margin-bottom:20px; font-size:20px; }
+.score { font-weight:bold; font-size:22px; margin:20px 0; }
+.week { display:none; }
+</style>
+</head>
+<body>
+
+<!-- START SCREEN -->
+<div id="startScreen" class="center-screen">
+  <h1>MAPEH IV - Quarter 4</h1>
+  <button class="play-now" onclick="startGame()">Play Now</button>
+</div>
+
+<div id="gameContent" class="week-content" style="display:none;">
+
+  <!-- WEEK 1: The Legend of Maria Makiling -->
+  <div class="week" id="week1">
+    <h2>Week 1: The Legend of Maria Makiling</h2>
+    <p class="story">
+      In the lush mountains of Laguna, Philippines, lived Maria Makiling, a mystical and beautiful fairy. She possessed healing powers and helped the locals with herbal remedies. One day, Juan, a young hunter, entered the forest. Maria fell in love with him, but their love was impossible. Heartbroken, Maria retreated into the mountain. To this day, locals claim to see her protecting Mount Makiling.
+    </p>
+
+    <h3>1. Where is Mount Makiling located?</h3>
+    <button onclick="checkAnswerMAPEH(1,'A')">A. Baguio</button>
+    <button onclick="checkAnswerMAPEH(1,'B')">B. Laguna</button>
+    <button onclick="checkAnswerMAPEH(1,'C')">C. Manila</button>
+    <button onclick="checkAnswerMAPEH(1,'D')">D. Cebu</button>
+    <p class="feedback" id="feedbackMAPEH1"></p>
+
+    <h3>2. What is Maria Makiling?</h3>
+    <button onclick="checkAnswerMAPEH(2,'A')">A. Mortal</button>
+    <button onclick="checkAnswerMAPEH(2,'B')">B. Goddess</button>
+    <button onclick="checkAnswerMAPEH(2,'C')">C. Diwata (Fairy)</button>
+    <button onclick="checkAnswerMAPEH(2,'D')">D. Mountain spirit</button>
+    <p class="feedback" id="feedbackMAPEH2"></p>
+
+    <h3>3. What is Maria's special gift?</h3>
+    <button onclick="checkAnswerMAPEH(3,'A')">A. Telekinesis</button>
+    <button onclick="checkAnswerMAPEH(3,'B')">B. Shape-shifting</button>
+    <button onclick="checkAnswerMAPEH(3,'C')">C. Healing powers</button>
+    <button onclick="checkAnswerMAPEH(3,'D')">D. Elemental control</button>
+    <p class="feedback" id="feedbackMAPEH3"></p>
+
+    <h3>4. Why did Maria retreat deeper into the mountain?</h3>
+    <button onclick="checkAnswerMAPEH(4,'A')">A. Fear of humans</button>
+    <button onclick="checkAnswerMAPEH(4,'B')">B. Loss of powers</button>
+    <button onclick="checkAnswerMAPEH(4,'C')">C. Dispute with gods</button>
+    <button onclick="checkAnswerMAPEH(4,'D')">D. Heartbreak from lost love</button>
+    <p class="feedback" id="feedbackMAPEH4"></p>
+
+    <h3>5. What does Maria's legend promote?</h3>
+    <button onclick="checkAnswerMAPEH(5,'A')">A. Cultural heritage and conservation</button>
+    <button onclick="checkAnswerMAPEH(5,'B')">B. Supernatural powers</button>
+    <button onclick="checkAnswerMAPEH(5,'C')">C. Environmental destruction</button>
+    <button onclick="checkAnswerMAPEH(5,'D')">D. Human dominance</button>
+    <p class="feedback" id="feedbackMAPEH5"></p>
+
+    <button onclick="nextWeekMAPEH(2)">Next Week</button>
+  </div>
+
+  <!-- WEEK 2: Maya's Health Journey -->
+  <div class="week" id="week2">
+    <h2>Week 2: Maya's Health Journey</h2>
+    <p class="story">
+      Maya, a 6-year-old, fell ill with diarrhea and vomiting. Her parents ensured she drank purified water, ate balanced meals, and received vaccinations. Maya learned hygiene practices like washing hands. She recovered quickly, inspiring her community to prioritize health.
+    </p>
+
+    <h3>1. What was Maya's initial illness?</h3>
+    <button onclick="checkAnswerMAPEH(6,'A')">A. Fever</button>
+    <button onclick="checkAnswerMAPEH(6,'B')">B. Skin infection</button>
+    <button onclick="checkAnswerMAPEH(6,'C')">C. Respiratory issue</button>
+    <button onclick="checkAnswerMAPEH(6,'D')">D. Diarrhea and vomiting</button>
+    <p class="feedback" id="feedbackMAPEH6"></p>
+
+    <h3>2. What was emphasized by the doctor?</h3>
+    <button onclick="checkAnswerMAPEH(7,'A')">A. Medication</button>
+    <button onclick="checkAnswerMAPEH(7,'B')">B. Hospitalization</button>
+    <button onclick="checkAnswerMAPEH(7,'C')">C. Traditional remedies</button>
+    <button onclick="checkAnswerMAPEH(7,'D')">D. Basic health rights</button>
+    <p class="feedback" id="feedbackMAPEH7"></p>
+
+    <h3>3. What ensured Maya's quick recovery?</h3>
+    <button onclick="checkAnswerMAPEH(8,'A')">A. Ignoring symptoms</button>
+    <button onclick="checkAnswerMAPEH(8,'B')">B. Traditional remedies</button>
+    <button onclick="checkAnswerMAPEH(8,'C')">C. Only medication</button>
+    <button onclick="checkAnswerMAPEH(8,'D')">D. Basic health rights and care</button>
+    <p class="feedback" id="feedbackMAPEH8"></p>
+
+    <h3>4. What did Maya's parents teach her?</h3>
+    <button onclick="checkAnswerMAPEH(9,'A')">A. Only medication</button>
+    <button onclick="checkAnswerMAPEH(9,'B')">B. Ignoring symptoms</button>
+    <button onclick="checkAnswerMAPEH(9,'C')">C. Traditional remedies</button>
+    <button onclick="checkAnswerMAPEH(9,'D')">D. Hygiene practices</button>
+    <p class="feedback" id="feedbackMAPEH9"></p>
+
+    <h3>5. What was the community's response?</h3>
+    <button onclick="checkAnswerMAPEH(10,'A')">A. Anger</button>
+    <button onclick="checkAnswerMAPEH(10,'B')">B. Concern</button>
+    <button onclick="checkAnswerMAPEH(10,'C')">C. Indifference</button>
+    <button onclick="checkAnswerMAPEH(10,'D')">D. Inspiration to prioritize health</button>
+    <p class="feedback" id="feedbackMAPEH10"></p>
+
+    <div class="score" id="scoreMAPEH" style="display:none;"></div>
+    <button onclick="calculateScoreMAPEH()">See Score</button>
+  </div>
+
+  <!-- WEEK 3: Fiesta ng Cavite -->
+  <div class="week" id="week3">
+    <h2>Week 3: Fiesta ng Cavite</h2>
+    <p class="story">
+      Cavite celebrates its annual fiesta showcasing traditional dances, music, and visual arts. The parade, concerts, and exhibits highlight local instruments, textiles, and craftsmanship. This event fosters cultural pride and inspires the next generation to preserve Cavite's traditions.
+    </p>
+
+    <h3>1. What was the effect of featuring traditional dances?</h3>
+    <button onclick="checkAnswerMAPEH(11,'A')">A. Decreased tourism</button>
+    <button onclick="checkAnswerMAPEH(11,'B')">B. Increased cultural appreciation</button>
+    <button onclick="checkAnswerMAPEH(11,'C')">C. No impact</button>
+    <button onclick="checkAnswerMAPEH(11,'D')">D. Loss of heritage</button>
+    <p class="feedback" id="feedbackMAPEH11"></p>
+
+    <h3>2. What caused the surge in local artisans' sales?</h3>
+    <button onclick="checkAnswerMAPEH(12,'A')">A. Online marketing</button>
+    <button onclick="checkAnswerMAPEH(12,'B')">B. Fiesta ng Cavite's craftsmanship exhibits</button>
+    <button onclick="checkAnswerMAPEH(12,'C')">C. Discounted prices</button>
+    <button onclick="checkAnswerMAPEH(12,'D')">D. Social media</button>
+    <p class="feedback" id="feedbackMAPEH12"></p>
+
+    <h3>3. What was the effect of the kundiman concert?</h3>
+    <button onclick="checkAnswerMAPEH(13,'A')">A. Decreased interest in traditional music</button>
+    <button onclick="checkAnswerMAPEH(13,'B')">B. Increased appreciation for Filipino culture</button>
+    <button onclick="checkAnswerMAPEH(13,'C')">C. No change</button>
+    <button onclick="checkAnswerMAPEH(13,'D')">D. Financial losses</button>
+    <p class="feedback" id="feedbackMAPEH13"></p>
+
+    <h3>4. What caused the community's increased participation?</h3>
+    <button onclick="checkAnswerMAPEH(14,'A')">A. Government incentives</button>
+    <button onclick="checkAnswerMAPEH(14,'B')">B. Fiesta ng Cavite's cultural significance</button>
+    <button onclick="checkAnswerMAPEH(14,'C')">C. Social media campaigns</button>
+    <button onclick="checkAnswerMAPEH(14,'D')">D. Economic benefits</button>
+    <p class="feedback" id="feedbackMAPEH14"></p>
+
+    <h3>5. What was the long-term effect of Fiesta ng Cavite?</h3>
+    <button onclick="checkAnswerMAPEH(15,'A')">A. Cultural heritage loss</button>
+    <button onclick="checkAnswerMAPEH(15,'B')">B. Preservation of Cavite's traditions</button>
+    <button onclick="checkAnswerMAPEH(15,'C')">C. Economic decline</button>
+    <button onclick="checkAnswerMAPEH(15,'D')">D. No impact</button>
+    <p class="feedback" id="feedbackMAPEH15"></p>
+
+    <div class="score" id="scoreMAPEH3" style="display:none;"></div>
+    <button onclick="calculateScoreMAPEH()">See Score</button>
+  </div>
+
+</div>
+
+<script>
+function startGame(){
+  document.getElementById('startScreen').style.display='none';
+  document.getElementById('gameContent').style.display='block';
+  showWeekMAPEH(1);
+}
+
+function nextWeekMAPEH(week){ showWeekMAPEH(week); }
+function showWeekMAPEH(week){
+  const weeks = document.querySelectorAll('.week');
+  weeks.forEach(w=>w.style.display='none');
+  document.getElementById('week'+week).style.display='block';
+}
+
+// Correct answers
+const answersMAPEH = {
+  1:'B',2:'C',3:'C',4:'D',5:'D',
+  6:'D',7:'D',8:'D',9:'D',10:'D',
+  11:'B',12:'B',13:'B',14:'B',15:'B'
+};
+
+// English voice-over
+function speak(text){
+  if('speechSynthesis' in window){
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = text;
+    msg.lang = 'en-US';
+    msg.rate = 1;
+    msg.pitch = 1;
+    window.speechSynthesis.speak(msg);
+  }
+}
+
+function checkAnswerMAPEH(qNum, choice){
+  const fb=document.getElementById('feedbackMAPEH'+qNum);
+  if(choice===answersMAPEH[qNum]){
+    fb.textContent='✅ Correct! Well done!';
+    fb.style.color='green';
+    speak('Correct! Well done!');
+  } else {
+    fb.textContent='❌ Incorrect. Try again!';
+    fb.style.color='red';
+    speak('Incorrect. Try again!');
+  }
+}
+
+function calculateScoreMAPEH(){
+  let score=0;
+  for(let i=1;i<=15;i++){
+    const fb=document.getElementById('feedbackMAPEH'+i).textContent;
+    if(fb.includes('Correct')) score++;
+  }
+  const scoreText = `You scored ${score} out of 15!`;
+  document.getElementById('scoreMAPEH').textContent=scoreText;
+  document.getElementById('scoreMAPEH').style.display='block';
+  speak(scoreText);
+}
+</script>
+
+</body>
+</html>
